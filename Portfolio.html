@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maruf_portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 30px;
+            margin-right: 20px;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            padding: 5px;
+            background-color: #2d2476;
+            color: white;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .name {
+            margin-left: 10px;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        @keyframes shine {
+            100% {
+                left: 125%;
+            }
+        }
+
+        .first_logo {
+            display: inline-block;
+            animation: shine 2s infinite;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgb(107, 84, 192);
+            margin-left: 20px;
+        }
+
+        .first_logo:hover {
+            box-shadow: 5px #973e3e;
+            transition: 0.3s;
+            animation: none;
+            transform: scale(1.2);
+        }
+
+        .nav-links li a {
+            display: inline-block;
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            padding: 8px;
+        }
+
+        .nav-links li:hover {
+            background-color: rgb(107, 84, 192);
+            transition: 0.3s;
+            border-radius: 4px;
+            transform: scale(1.1);
+        }
+
+        .nav-links li a:focus {
+            background-color: rgb(8, 174, 185);
+            transition: 0.3s;
+            text-align: top;
+        }
+
+        .home_section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 80vh;
+            background-color: rgb(200, 213, 225);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            font-size: 20px;
+            padding-top: 150px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 70px;
+        }
+
+        .profile_pic {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgb(107, 84, 192);
+        }
+
+        .intro {
+            font-size: 60px;
+            font-weight: bold;
+            width: 500px;
+            margin: 0;
+            padding: 0;
+            color: black;
+            padding-bottom: 80px;
+        }
+
+        .about_me {
+            font-size: 20px;
+            margin-top: 30px;
+            line-height: 1.3;
+            margin-bottom: 50px;
+            width: 400px;
+            color: black;
+        }
+
+        .details {
+            margin-top: 30px;
+            display: flex;
+            gap: 50px;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .details .de {
+            border-radius: 10px;
+            padding: 15px;
+            background-color: rgb(92, 110, 159);
+        }
+
+        .details .de:hover {
+            background-color: rgb(107, 84, 192);
+            transition: 0.3s;
+            box-shadow: black;
+        }
+
+
+        .myname {
+            color: rgb(45, 139, 148);
+            animation: colorChange 5s infinite;
+        }
+
+        @keyframes colorChange {
+            0% {
+                color: rgb(142, 77, 77);
+            }
+
+            25% {
+                color: rgb(68, 68, 161);
+            }
+
+            50% {
+                color: rgb(54, 134, 54);
+            }
+
+            75% {
+                color: rgb(133, 108, 62);
+            }
+
+            100% {
+                color: rgb(154, 73, 73);
+            }
+        }
+
+        .My_projects {
+            text-align: center;
+            margin-top: 50px;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+        }
+
+        .My_projects .p {
+            font-size: 40px;
+            margin: 0;
+            padding: 0;
+            color: black;
+        }
+
+        .My_projects .p1 {
+            margin: 0;
+            padding: 0;
+            color: rgba(33, 28, 28, 0.493);
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: space-around;
+            align-items: center;
+            gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            padding: 30px;
+
+        }
+
+        .first_project {
+            text-align: justify;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            border: 2px solid rgb(107, 84, 192);
+            border-radius: 10px;
+            padding: 20px;
+            color: rgba(21, 14, 14, 0.527);
+            background-color: lightblue;
+        }
+
+        .first_project:hover {
+            box-shadow: 5px 10px 18px #8d6c6c;
+            transition: 0.3s;
+        }
+
+        .link a {
+            display: inline-block;
+            text-decoration: none;
+            color: rgb(132, 44, 44);
+            font-weight: bold;
+            padding: 20px;
+            background-color: rgb(180, 169, 225);
+            margin-top: 10px;
+            margin-left: 75px;
+            border-radius: 20px;
+        }
+
+        .link a:hover {
+            display: inline-block;
+            background-color: rgb(58, 49, 89);
+            color: white;
+            transition: 0.3s;
+        }
+
+        .project_section {
+            background-color: rgba(181, 209, 235, 0.772);
+            padding: 20px;
+        }
+
+        #element {
+            margin-top: 30px;
+            font-size: 30px;
+            font-weight: bold;
+            color: rgb(135, 31, 100);
+        }
+
+        html,
+        body {
+            scroll-behavior: smooth;
+        }
+
+        .skill_section {
+            text-align: center;
+            padding: 40px;
+            font-size: 40px;
+            background-color: rgba(165, 188, 209, 0.655);
+        }
+
+        .My_skills {
+            animation: colorChange 5s infinite;
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .ami_ki_kori {
+            font-size: 30px;
+            text-align: justify;
+            margin-left: 50px;
+            line-height: 1.3;
+            margin-bottom: 50px;
+            margin-right: 50px;
+            color: black;
+            padding: 20px;
+            border: 2px solid rgb(177, 208, 214);
+            border-radius: 10px;
+            background-color: rgb(53, 53, 96);
+            color: white;
+        }
+
+        .skill_dsecription {
+            margin: 0;
+            border: 2px solid rgb(15, 205, 91);
+        }
+        .image_effect {
+            width: 100px;
+            height: 100px;
+            margin-top: 0;
+            margin: 20px;
+            border-radius: 10px;
+            object-fit: cover;
+            padding: 10px;
+        }
+
+        .image_effect:hover {
+            box-shadow: 5px 10px 18px #8d6c6c;
+            background-color: #2d2476;
+            transition: 0.3s;
+            transform: scale(1.2);
+        }
+
+        .about_me_profile_pic {
+            width: 300px;
+            height: 300px;
+            margin-top: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgb(107, 84, 192);
+            margin-right: 50px;
+            margin-bottom: 20px;
+        }
+        .about_me_profile_pic:hover {
+            box-shadow: 5px #524141;
+            transition: 0.3s;
+            transform: scale(1.1);
+        }
+
+        .social_ac {
+            color: black;
+            font-size: 30px;
+            padding: 5px;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+        .social_ac:hover {
+            color: rgb(55, 120, 177);
+            transform: scale(1.3);
+            transition: 0.3s;
+            background-color: rgb(251, 237, 237);
+        }
+    </style>
+
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- home page -->
+    <header class="header">
+
+        <!-- navgitaion section -->
+        <nav class="navbar">
+            <div class="logo">
+                <img class="first_logo" src="images/download.png" alt="">
+                <h3 class="name">Maruf_portfolio</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#project_page">Projects</a></li>
+                <li><a href="#s_skills">Skills</a></li>
+                <li><a href="#about_sec">About</a></li>
+                <li><a href="#contect_me_section">Contact</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- home section -->
+        <div class="home_section">
+            <div>
+                <p class="intro">
+                    Hello, I am <span class="myname">Arafat Mahmood Maruf</span>
+                </p>
+                <span id="element"></span>
+                <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+                <script>
+                    var typed = new Typed('#element', {
+                        strings: ['Competitive programmer', 'Web developer'],
+                        loop: true,
+                        typeSpeed: 50,
+                    });
+                </script>
+                <div class="details">
+                    <p class="de">
+                        1 Year Experience
+                    </p>
+                    <p class="de">
+                        3+ Projects Completed
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <img class="profile_pic" src="images/profile.jpeg" alt="">
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- project section -->
+    <div id="project_page" class="project_section">
+        <div class="My_projects">
+            <p class="p">
+                My Projects
+            </p>
+            <p class="p1">
+                Here are some of the projects that I have worked on recently.
+            </p>
+        </div>
+        <div class="project">
+            <!--first project-->
+            <div class="first_project">
+                <img style="width: 100%;" src="images/food_delivary.jpeg" alt="">
+                <p style="font-size: large; color: black;">
+                    Online Food Ordering System (C)
+                </p>
+
+                <p style="margin-bottom: 60px;line-height: 1.5;">
+                    A console-based food ordering system built using C. Users can browse menu items, place orders, and
+                    view order summaries through a simple text-based interface. The project demonstrates procedural
+                    programming, data handling, and menu-driven application design in C.
+                </p>
+
+                <p class="link"><a href="https://github.com/Maruf00113/my_first_c_project_1st-semester"
+                        target="_blank">PROJECT LINK &#8594</a></p>
+
+            </div>
+
+            <!-- second project -->
+            <div class="first_project">
+                <img style="width: 100%; height: 230px;" src="images/school_management_system.jpeg" alt="">
+                <p style="font-size: large; color: black;">
+                    Schoool Management System (java)
+                </p>
+
+                <p style="margin-bottom: 20px;line-height: 1.2;">
+                    The School Management System is a project that manages student records, teacher details, and class schedules while simplifying tasks like admissions, attendance, and grade tracking. It brings efficiency by keeping all school data organized in one place and ensures smooth management of daily operations. This project was developed using java with file handling and basic database concepts.
+                </p>
+
+                <p class="link"><a href="https://github.com/IFTE-01/blood_management"
+                        target="_blank">PROJECT LINK &#8594</a></p>
+
+            </div>
+
+            <!-- third project -->
+            <div class="first_project">
+                <img style="width: 100%;" src="images/food_delivary.jpeg" alt="">
+                <p style="font-size: large; color: black;">
+                    Online Food Ordering System (C)
+                </p>
+
+                <p style="margin-bottom: 20px;line-height: 1.5;">
+                    A console-based food ordering system built using C. Users can browse menu items, place orders, and
+                    view order summaries through a simple text-based interface. The project demonstrates procedural
+                    programming, data handling, and menu-driven application design in C.
+                </p>
+
+                <p class="link"><a href="https://github.com/Maruf00113/my_first_c_project_1st-semester"
+                        target="_blank">PROJECT LINK &#8594</a></p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- skill section -->
+    <div id="s_skills" class="skill_section">
+        <div>
+            <p class="My_skills">My Skills</p>
+        </div>
+
+        <div style="margin-left: 50px; margin-right: 50px; border-radius: 10px;">
+            <img class="image_effect" src="images/c.png" alt="c language" title="c language">
+            <img class="image_effect" src="images/c++.png" alt="c++ language" title="c++ language">
+            <img class="image_effect" src="images/css.png" alt="css language" title="css">
+            <img class="image_effect" src="images/html.png" alt="html language" title="html">
+            <img class="image_effect" src="images/java.png" alt="java language" title="java">
+            <img class="image_effect" src="images/database.png" alt="database" title="database management system">
+        </div>
+
+        <div class="skill_description">
+            <p class="ami_ki_kori">
+                I am skilled in programming with C and C++, where I practice problem-solving through competitive
+                programming.
+                I also work with Java, applying object-oriented concepts to build structured applications.
+                In web development, I use HTML and CSS to create responsive and visually appealing designs.
+                I have some hands-on experience with Tailwind CSS for faster styling.
+                Additionally, I possess a basic understanding of DBMS to manage and organize data effectively.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- about section -->
+    <div id="about_sec" style="display: flex; padding: 50px; background-color: rgb(183, 183, 214);">
+        <div>
+             <img class="about_me_profile_pic" src="images/profile.jpeg" alt="">
+
+             <div style="padding: 10px; background-color: rgb(92, 97, 129); display: flex; gap: 40px;  justify-content: center; width: 250px; margin-left: 20px;height: 40px; align-items: center; border-radius: 20px;">
+
+
+                <a class="social_ac" href="https://www.facebook.com/arafat.maruf.779" target="_blank" title="facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a class="social_ac" href="https://www.linkedin.com/in/arafat-maruf-b432b5370/" target="_blank" title="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+                <a class="social_ac" href="https://github.com/Maruf00113" target="_blank" title="github"><i class="fa-brands fa-github"></i></a>
+
+             </div>
+
+        </div>
+
+        <div style="text-align: center; padding: 40px; font-size: 30px; background-color: rgba(165, 188, 209, 0.655); padding: 20px; text-align: justify; margin-left: 20px; border: 2px solid rgb(151, 132, 218); border-radius: 10px; color: rgb(135, 68, 68);">
+            <p style="font-size: 50px;">
+                I am beginner level web developer and competitive programmer.
+            </p>
+            <p style="font-size: 20px; line-height: 1.5; margin-top: 20px;color: rgba(24, 14, 14, 0.811);">
+                I am a dedicated and passionate individual with a strong interest in technology and programming.
+                I have a solid foundation in C and C++ programming languages, which I have honed through various projects and competitive programming challenges.
+                My experience extends to web development, where I have worked with HTML and CSS to create responsive and user-friendly websites.
+                I am also familiar with Java and have a basic understanding of database management systems (DBMS).
+            </p>
+        </div>
+
+    </div>
+
+    <!-- contact me section -->
+     <div id="contect_me_section" style="background-color: rgb(36, 36, 43); margin: 0;">
+        <div style="text-align: justify; padding: 50px; font-size: 30px; background-color: rgb(26, 33, 40); color: rgb(240, 233, 233); border: 2px solid rgb(107, 84, 192); border-radius: 10px;">
+            <p style="font-size: 50px; font-weight: bold;">Contact me</p>
+            <p>Email: maruf117155@gmail.com</p>
+            <p>Phone: 01690011616</p>
+            <p>Address: Chittagong, Bangladesh</p>
+        </div>
+
+        <p style="text-align: center; padding: 20px; background-color: rgb(45, 36, 96); color: white; font-size: 20px; margin: 0;">
+            &#169; 2025 Arafat Mahmood Maruf.
+        </p>
+     </div>
+</body>
+
+</html>
